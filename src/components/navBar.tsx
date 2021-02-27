@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
       minHeight : '50px'
     },
     menuButton: {
-      marginRight: theme.spacing(2),
+      marginLeft : 'auto'
     },
 
   }),
@@ -36,7 +36,12 @@ const NavBar: React.FC<NavBarProps> = () => {
           <Typography variant="h6" >
               Foody
             </Typography>
+
+            <div  className={classes.menuButton}>
             <Button color="inherit">Home</Button>
+            <Button color="inherit">Recipes</Button>
+            </div>
+
           </Toolbar>
         </AppBar>
       </div>
