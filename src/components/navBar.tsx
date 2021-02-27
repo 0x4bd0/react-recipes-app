@@ -16,14 +16,12 @@ export interface NavBarProps {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      flexGrow: 1,
+      minHeight : '50px'
     },
     menuButton: {
       marginRight: theme.spacing(2),
     },
-    title: {
-      flexGrow: 1,
-    },
+
   }),
 );
 
@@ -35,7 +33,7 @@ const NavBar: React.FC<NavBarProps> = () => {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" >
               Foody
             </Typography>
             <Button color="inherit">Home</Button>
