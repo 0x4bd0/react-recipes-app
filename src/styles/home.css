@@ -1,0 +1,55 @@
+
+.leftDiv {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rightDiv {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .rightDiv h1 {
+  font-size: 50px;
+  }
+  .rightDiv p {
+    font-size: 30px;
+    width: 30vw;
+    text-justify: justify;
+    }
+  
+  .home{
+    display: flex;
+    flex:1
+  }
+  
+  
+  .homeImage{
+    width:  40vw;
+  }
+  
+  @media (max-width: 800px) {
+    .App {
+      flex-direction: column;
+    }
+    .bodyContent {
+      flex-direction: column;
+    }
+    .home {
+      flex-direction: column;
+    }
+    .homeImage{
+      width:  80vw;
+    }
+    .rightDiv p {
+      font-size: 30px;
+      width: 80vw;
+      text-justify: justify;
+      }
+  }
+  
