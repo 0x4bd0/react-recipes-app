@@ -1,4 +1,3 @@
-import NavBar from "../components/navBar";
 import HomePageImage from "../images/homeImage";
 import '../styles/home.css'
 
