@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { 
+  BrowserRouter,
   BrowserRouter as Router,
   Link } from 'react-router-dom';
 
@@ -40,12 +41,9 @@ const NavBar: React.FC<NavBarProps> = () => {
               Foody
             </Typography>
             <div  className={classes.menuButton}>
-              <Router>            
                 <Link to="/" className={classes.link}> <Button color="inherit">Home</Button> </Link>
                 <Link to="/recipes" className={classes.link}><Button color="inherit">Recipes</Button></Link>
-              </Router>
             </div>
-
           </Toolbar>
         </AppBar>
       </div>

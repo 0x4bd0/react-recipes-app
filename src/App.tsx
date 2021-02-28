@@ -11,23 +11,24 @@ import Footer from "./components/footer";
 
 const App: React.FC = () => {
   return (
+    <Router>
     <div className="App">
         <NavBar></NavBar>
         <div className="bodyContent">
-              <Router>
               <Switch>
                 <Route exact path="/">
                 <Home></Home>
                 </Route>
-                <Route path="/about">
+                <Route path="/recipes">
                 </Route>
                 <Route path="/dashboard">
                 </Route>
               </Switch>
-          </Router>
+         
         </div>
     <Footer></Footer>
     </div>
+    </Router>
     );
 }
  
