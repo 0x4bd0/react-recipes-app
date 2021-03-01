@@ -17,8 +17,10 @@ import { RecipeContextType, RecipeData } from "../types/types";
     switch(action.type) {
         case 'search' : 
         {
-          console.log('we in baby')
-          return state
+          if(action.payload == '') {
+            return data
+          }
+          return [...data.filter(item=>item.name.toLowerCase().search(action.payload.toLowerCase()) !== -1)]
         }
         default :
         return state
