@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from "./routes/home";
 import Footer from "./components/footer";
+import Recipes from "./routes/recipes";
 
 const App: React.FC = () => {
   return (
@@ -20,11 +21,11 @@ const App: React.FC = () => {
                 <Home></Home>
                 </Route>
                 <Route path="/recipes">
+                  <Recipes></Recipes>
                 </Route>
                 <Route path="/dashboard">
                 </Route>
               </Switch>
-         
         </div>
     <Footer></Footer>
     </div>
