@@ -5,5 +5,6 @@ export type RecipeData  = {
   }
 
 export type RecipeContextType = {
-    recipes  : Array<RecipeData>
+    recipes  : Array<RecipeData>,
+    dispatch : any
 }
