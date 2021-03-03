@@ -17,7 +17,8 @@ export interface NavBarProps {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      minHeight : '50px',
+      minHeight: '50px',
+      width: '100vw',
     },
     menuButton: {
       marginLeft : 'auto',

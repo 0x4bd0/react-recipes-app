@@ -9,6 +9,7 @@ import {
 import Home from "./routes/home";
 import Footer from "./components/footer";
 import Recipes from "./routes/recipes";
+import Recipe from "./routes/recipe";
 
 const App: React.FC = () => {
   return (
@@ -19,7 +20,10 @@ const App: React.FC = () => {
               <Switch>
                 <Route exact path="/">
                 <Home></Home>
-                </Route>
+            </Route>
+             <Route path="/recipes/:id">
+                  <Recipe></Recipe>
+              </Route>
                 <Route path="/recipes">
                   <Recipes></Recipes>
                 </Route>

@@ -51,7 +51,7 @@ export default function TitlebarGridList() {
         {recipes.map((tile, i) => (
             <GridListTile key={tile.id}>
             <img src={tile.imageURL} alt={tile.name} />
-            <Link to="/">
+            <Link to={`/recipes/${tile.id}`}>
             <GridListTileBar
               title={tile.name}
               subtitle={<span>by: { tile.author ? tile.author : 'anonym' }</span>}
