@@ -39,7 +39,7 @@ export default function TitlebarGridList() {
   const recipesContext : RecipeContextType = useContext(RecipeContext)
  
   const {
-      recipes
+    recipes
   }  = recipesContext
 
   return (
