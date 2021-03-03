@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
 import { RecipeContextType } from '../types/types';
 import { RecipeContext } from '../contexts/recipes';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -47,9 +48,10 @@ export default function TitlebarGridList() {
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
           <ListSubheader component="div" className={classes.title}>All recipes</ListSubheader>
         </GridListTile>
-        {recipes.map((tile,i) => (
-          <GridListTile key={i}>
+        {recipes.map((tile, i) => (
+            <GridListTile key={tile.id}>
             <img src={tile.imageURL} alt={tile.name} />
+            <Link to="/">
             <GridListTileBar
               title={tile.name}
               subtitle={<span>by: { tile.author ? tile.author : 'anonym' }</span>}
@@ -59,6 +61,7 @@ export default function TitlebarGridList() {
                 </IconButton>
               }
             />
+             </Link>
           </GridListTile>
         ))}
       </GridList>

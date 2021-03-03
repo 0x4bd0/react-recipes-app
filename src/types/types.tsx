@@ -1,7 +1,8 @@
 export type RecipeData  = {
     name : string,
     imageURL : string,
-    author? : string
+    author? : string,
+    id : number
   }
 
 export type RecipeContextType = {
