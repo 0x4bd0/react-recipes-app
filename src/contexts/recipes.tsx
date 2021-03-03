@@ -13,6 +13,16 @@ import { RecipeContextType, RecipeData } from "../types/types";
     payload: string
   }
 
+
+    enum RecipeActionKind {
+    Increase = 'fetch',
+  }
+
+  type RecipeAction = {
+    type: RecipeActionKind,
+    payload: number
+  }
+
   const recipesReducer = (state:Array<RecipeData>, action : Action) : Array<RecipeData> => {
     switch(action.type) {
         case 'search' : 
@@ -25,20 +35,34 @@ import { RecipeContextType, RecipeData } from "../types/types";
         default :
         return state
     }
+  }
+
+    const recipeReducer = (state:RecipeData | null, action : RecipeAction) : RecipeData  | null => {
+    switch(action.type) {
+        case 'fetch' : 
+        {
+          return data.filter(item=>item.id == action.payload)[0]
+        }
+        default :
+        return null
+    }
 }
 
 const contextDefaultValue : RecipeContextType = {
-  recipes : [],
-  dispatch : recipesReducer
+  recipes: [],
+  recipe: null,
+  dispatch: recipesReducer,
+  recipeDispatcher : recipeReducer
 }
 
  export const RecipeContext  = createContext(contextDefaultValue);
 
 const RecipeContextProvider: React.FC = (props) => {
     let [recipes, dispatch] = useReducer(recipesReducer,data)
+    let [recipe, recipeDispatcher] = useReducer(recipeReducer,null)
 
     return ( 
-      <RecipeContext.Provider value={{recipes,dispatch}}>
+      <RecipeContext.Provider value={{recipes,dispatch,recipe,recipeDispatcher}}>
        {props.children}
       </RecipeContext.Provider>
      );

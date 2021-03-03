@@ -6,6 +6,9 @@ export type RecipeData  = {
   }
 
 export type RecipeContextType = {
-    recipes  : Array<RecipeData>,
-    dispatch : any
+     recipes: Array<RecipeData>,
+      recipe  : RecipeData | null,
+     dispatch: any,
+      recipeDispatcher : any
+
 }
