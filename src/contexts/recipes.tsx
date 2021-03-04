@@ -29,7 +29,7 @@ const recipeReducer = (state: RecipeData | null, action: RecipeAction) : RecipeD
     }
 }
 
-const favoriteRecipeReducer = (state: Array<number>, action: FavoriteRecipeAction): Array<number> => {
+const favoriteRecipeReducer = (state: Array<RecipeData>, action: FavoriteRecipeAction): Array<RecipeData> => {
       let tmp = [...state]
 
     switch(action.type) {
@@ -40,7 +40,7 @@ const favoriteRecipeReducer = (state: Array<number>, action: FavoriteRecipeActio
         }
        case 'remove' : 
         {
-          return tmp.filter(item=>item !== action.payload)
+          return tmp.filter(item=>item.id !== action.payload.id)
         }
         default :
         return []

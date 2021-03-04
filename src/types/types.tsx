@@ -12,8 +12,8 @@ export type RecipeContextType = {
       recipe  : RecipeData | null,
      dispatch: any,
      recipeDispatcher : any,
-     favoriteRecipeDispatcher: any,
-     favoriteRecipes : Array<number>
+     favoriteRecipeDispatcher: any
+     favoriteRecipes : Array<RecipeData>
 }
 
 export type ingredient =  {
@@ -46,5 +46,5 @@ export  enum FavoriteRecipeActionKind {
 
     export type FavoriteRecipeAction = {
     type: FavoriteRecipeActionKind,
-    payload: number
+    payload: RecipeData
   }

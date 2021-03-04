@@ -4,7 +4,7 @@ import { Favorite, FavoriteBorder } from "@material-ui/icons";
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { RecipeContext } from "../contexts/recipes";
-import { FavoriteRecipeActionKind, RecipeActionKind, RecipeContextType } from "../types/types";
+import { FavoriteRecipeActionKind, RecipeActionKind, RecipeContextType, RecipeData } from "../types/types";
 
 export interface RecipeProps {
     
@@ -75,19 +75,19 @@ const recipeReducer : RecipeContextType = useContext(RecipeContext)
     recipeDispatcher(tmp)
     },[])
     
-    const hundleFavoriteBtn = (id : number) => {
+    const hundleFavoriteBtn = (data : RecipeData) => {
 
         if (recipe) {
 
-            if (favoriteRecipes.includes(recipe.id)) {
+            if (favoriteRecipes.find(item => item.id == recipe.id)) {
                 favoriteRecipeDispatcher({
                     type: FavoriteRecipeActionKind.remove ,
-                    payload : id
+                    payload : data
                 })
             } else {
                  favoriteRecipeDispatcher({
                     type: FavoriteRecipeActionKind.add ,
-                    payload : id
+                    payload : data
                 })
             }
            
@@ -102,9 +102,9 @@ const recipeReducer : RecipeContextType = useContext(RecipeContext)
             <h1 className={classes.title}  >{recipe.name}</h1>
             <Box>
                 {
-                    favoriteRecipes.includes(recipe.id)
-                        ? <Favorite className={classes.favorite} onClick={() => hundleFavoriteBtn(recipe.id)}></Favorite>
-                        :  <FavoriteBorder className={classes.favorite} onClick={() => hundleFavoriteBtn(recipe.id)}></FavoriteBorder>
+                    favoriteRecipes.find(item=>item.id === recipe.id)
+                        ? <Favorite className={classes.favorite} onClick={() => hundleFavoriteBtn(recipe)}></Favorite>
+                        :  <FavoriteBorder className={classes.favorite} onClick={() => hundleFavoriteBtn(recipe)}></FavoriteBorder>
                 }
             </Box>
              <div className={classes.space} ></div>
