@@ -11,6 +11,7 @@ import Footer from "./components/footer";
 import Recipes from "./routes/recipes";
 import Recipe from "./routes/recipe";
 import RecipeContextProvider from "./contexts/recipes";
+import Favourite from "./routes/favourite";
 
 const App: React.FC = () => {
   return (
@@ -28,6 +29,9 @@ const App: React.FC = () => {
               </Route>
                 <Route path="/recipes">
                   <Recipes></Recipes>
+              </Route>
+               <Route path="/favourites">
+                  =<Favourite></Favourite>
                 </Route>
                 <Route path="/dashboard">
                 </Route>

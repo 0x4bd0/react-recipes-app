@@ -2,23 +2,22 @@ import { Container } from "@material-ui/core";
 import { useContext } from "react";
 import TitlebarGridList from "../components/grid";
 import Search from "../components/search";
-import RecipeContextProvider, { RecipeContext } from "../contexts/recipes";
+import { RecipeContext } from "../contexts/recipes";
 import { RecipeContextType } from "../types/types";
 
-export interface RecipesProps {
+export interface FavouriteProps {
     
 }
  
-const Recipes: React.FC<RecipesProps> = () => {
+const Favourite: React.FC<FavouriteProps> = () => {
 
-    const recipesContext : RecipeContextType = useContext(RecipeContext)
+const recipesContext : RecipeContextType = useContext(RecipeContext)
  
   const {
     recipes
   } = recipesContext
-
+    
     return ( 
-        
                 <Container>
                     <Search></Search>
                     <TitlebarGridList recipes={recipes}></TitlebarGridList>
@@ -26,4 +25,4 @@ const Recipes: React.FC<RecipesProps> = () => {
      );
 }
  
-export default Recipes;
+export default Favourite;

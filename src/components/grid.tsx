@@ -6,7 +6,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import { RecipeContextType } from '../types/types';
+import { RecipeContextType, RecipeData } from '../types/types';
 import { RecipeContext } from '../contexts/recipes';
 import { Link } from 'react-router-dom';
 
@@ -34,13 +34,15 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function TitlebarGridList() {
+interface GridProps{
+recipes : Array<RecipeData>
+}
+
+export default function TitlebarGridList(props : GridProps) {
   const classes = useStyles();
-  const recipesContext : RecipeContextType = useContext(RecipeContext)
- 
-  const {
-    recipes
-  }  = recipesContext
+  const { recipes } = props
+  
+  console.log(recipes)
 
   return (
     <div className={classes.root}>

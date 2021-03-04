@@ -43,7 +43,8 @@ const NavBar: React.FC<NavBarProps> = () => {
             </Typography>
             <div  className={classes.menuButton}>
                 <Link to="/" className={classes.link}> <Button color="inherit">Home</Button> </Link>
-                <Link to="/recipes" className={classes.link}><Button color="inherit">Recipes</Button></Link>
+              <Link to="/recipes" className={classes.link}><Button color="inherit">Recipes</Button></Link>
+               <Link to="/favourites" className={classes.link}><Button color="inherit">Favourites</Button></Link>
             </div>
           </Toolbar>
         </AppBar>
