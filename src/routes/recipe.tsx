@@ -1,5 +1,6 @@
 import { Box, Container } from "@material-ui/core";
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
+import { Favorite, FavoriteBorder } from "@material-ui/icons";
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { RecipeContext } from "../contexts/recipes";
@@ -75,6 +76,10 @@ const recipeReducer : RecipeContextType = useContext(RecipeContext)
             recipe ? <Box className={classes.root}>
             <img className={classes.image} src={recipe.imageURL} alt={recipe.name}></img>
             <h1 className={classes.title}  >{recipe.name}</h1>
+            <Box>
+                <FavoriteBorder></FavoriteBorder>
+                <Favorite></Favorite>
+            </Box>
              <div className={classes.space} ></div>
             <h3 className={classes.li}>Ingredients</h3>
             <ol>
