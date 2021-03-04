@@ -14,13 +14,15 @@ const Favourite: React.FC<FavouriteProps> = () => {
 const recipesContext : RecipeContextType = useContext(RecipeContext)
  
   const {
-    recipes
+    favoriteRecipes
   } = recipesContext
+    
+    const title = 'My Favourites'
     
     return ( 
                 <Container>
                     <Search></Search>
-                    <TitlebarGridList recipes={recipes}></TitlebarGridList>
+                    <TitlebarGridList recipes={favoriteRecipes} title={title}></TitlebarGridList>
                 </Container>
      );
 }

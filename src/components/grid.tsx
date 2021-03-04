@@ -35,20 +35,19 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface GridProps{
-recipes : Array<RecipeData>
+  recipes: Array<RecipeData>,
+  title : string
 }
 
 export default function TitlebarGridList(props : GridProps) {
   const classes = useStyles();
-  const { recipes } = props
+  const { recipes, title } = props
   
-  console.log(recipes)
-
   return (
     <div className={classes.root}>
       <GridList cellHeight={180} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div" className={classes.title}>All recipes</ListSubheader>
+          <ListSubheader component="div" className={classes.title}>{title}</ListSubheader>
         </GridListTile>
         {recipes.map((tile, i) => (
             <GridListTile key={tile.id}>

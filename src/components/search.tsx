@@ -32,7 +32,6 @@ const Search: React.FC<SearchProps> = () => {
       dispatch
     } = recipeReducer
 
-         console.log(recipeReducer)
 
 
     return ( 

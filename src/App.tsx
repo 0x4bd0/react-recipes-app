@@ -31,7 +31,7 @@ const App: React.FC = () => {
                   <Recipes></Recipes>
               </Route>
                <Route path="/favourites">
-                  =<Favourite></Favourite>
+                  <Favourite></Favourite>
                 </Route>
                 <Route path="/dashboard">
                 </Route>

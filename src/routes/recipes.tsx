@@ -17,11 +17,13 @@ const Recipes: React.FC<RecipesProps> = () => {
     recipes
   } = recipesContext
 
+        const title = 'All recipes'
+    
     return ( 
         
                 <Container>
                     <Search></Search>
-                    <TitlebarGridList recipes={recipes}></TitlebarGridList>
+                    <TitlebarGridList recipes={recipes} title={title}></TitlebarGridList>
                 </Container>
      );
 }
