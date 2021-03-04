@@ -22,7 +22,6 @@ const recipeReducer = (state: RecipeData | null, action: RecipeAction) : RecipeD
     switch(action.type) {
         case 'fetch' : 
         {
-          console.log(action.payload)
           return data.filter(item=>item.id == action.payload)[0]
         }
         default :
@@ -30,17 +29,18 @@ const recipeReducer = (state: RecipeData | null, action: RecipeAction) : RecipeD
     }
 }
 
-const favoriteRecipeReducer = (state: Array<number>, action: FavoriteRecipeAction) : Array<number> => {
+const favoriteRecipeReducer = (state: Array<number>, action: FavoriteRecipeAction): Array<number> => {
+      let tmp = [...state]
+
     switch(action.type) {
         case 'add' : 
         {
-          console.log(action.payload)
-          return []
+          tmp.push(action.payload)
+          return tmp
         }
        case 'remove' : 
         {
-          console.log(action.payload)
-          return []
+          return tmp.filter(item=>item !== action.payload)
         }
         default :
         return []
