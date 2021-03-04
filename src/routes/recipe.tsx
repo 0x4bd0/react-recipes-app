@@ -19,7 +19,8 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       image: {
           width: '80vw',
-          height : '20vh'
+          height: '20vh',
+           borderRadius : '10px'
       },
     li: {
          textAlign: 'left'
@@ -29,7 +30,15 @@ const useStyles = makeStyles((theme: Theme) =>
           margin: '0 auto',
           position: 'relative',
           top: '50%'
-    }
+      },
+      space: {
+          height : '50px'
+      },
+      title: {
+          backgroundColor: '#c4cafea6',
+          borderRadius: '10px',
+          padding : '10px 0'
+      }
   }),
 );
 
@@ -65,15 +74,25 @@ const recipeReducer : RecipeContextType = useContext(RecipeContext)
         
             recipe ? <Box className={classes.root}>
             <img className={classes.image} src={recipe.imageURL} alt={recipe.name}></img>
-            <h1>{recipe.name}</h1>
-            <h3>Ingredients</h3>
+            <h1 className={classes.title}  >{recipe.name}</h1>
+             <div className={classes.space} ></div>
+            <h3 className={classes.li}>Ingredients</h3>
             <ol>
-                <li className={classes.li}>do dis</li>
+                {
+                    recipe.ingredients.map((item, i) => (
+                        <li className={classes.li} key={i}>{`${item.quantity} ${item.name}`}</li>
+                    ))
+                }
             </ol>
             <hr></hr>
-            <h3>Steps</h3>
+             <div className={classes.space} ></div>
+            <h3 className={classes.li}>Steps</h3>
             <ol>
-                <li className={classes.li}>do dis</li>
+                {
+                    recipe.steps.map((item, i) => (
+                        <li className={classes.li} key={i}>{item}</li>
+                    ))
+                }
             </ol>
             <hr></hr>
         </Box> :

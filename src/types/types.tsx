@@ -2,7 +2,9 @@ export type RecipeData  = {
     name : string,
     imageURL : string,
     author? : string,
-    id : number
+    id : number,
+    steps: Array<string>,
+    ingredients : Array<ingredient>
   }
 
 export type RecipeContextType = {
@@ -13,6 +15,11 @@ export type RecipeContextType = {
 
 }
 
+export type ingredient =  {
+  quantity: string,
+  name: string,
+  type : string
+}
 
 export  enum RecipeActionKind {
     fetch = 'fetch',
