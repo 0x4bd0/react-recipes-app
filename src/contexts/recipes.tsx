@@ -19,10 +19,10 @@ import { Action, RecipeAction, RecipeContextType, RecipeData } from "../types/ty
   }
 
 const recipeReducer = (state: RecipeData | null, action: RecipeAction) : RecipeData | null => {
-      console.log(action)
     switch(action.type) {
         case 'fetch' : 
         {
+          console.log(action.payload)
           return data.filter(item=>item.id == action.payload)[0]
         }
         default :

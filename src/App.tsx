@@ -10,12 +10,14 @@ import Home from "./routes/home";
 import Footer from "./components/footer";
 import Recipes from "./routes/recipes";
 import Recipe from "./routes/recipe";
+import RecipeContextProvider from "./contexts/recipes";
 
 const App: React.FC = () => {
   return (
     <Router>
     <div className="App">
         <NavBar></NavBar>
+        <RecipeContextProvider>
         <div className="bodyContent">
               <Switch>
                 <Route exact path="/">
@@ -30,7 +32,8 @@ const App: React.FC = () => {
                 <Route path="/dashboard">
                 </Route>
               </Switch>
-        </div>
+          </div>
+          </RecipeContextProvider>
     <Footer></Footer>
     </div>
     </Router>

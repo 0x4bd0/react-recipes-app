@@ -32,6 +32,9 @@ const Search: React.FC<SearchProps> = () => {
       dispatch
     } = recipeReducer
 
+         console.log(recipeReducer)
+
+
     return ( 
         <Container className={classes.root}>
             <Input className={classes.input} placeholder="Search your favorite food" onChange={(e)=>

@@ -9,12 +9,11 @@ export interface RecipesProps {
  
 const Recipes: React.FC<RecipesProps> = () => {
     return ( 
-        <RecipeContextProvider>
+        
                 <Container>
                     <Search></Search>
                     <TitlebarGridList></TitlebarGridList>
                 </Container>
-        </RecipeContextProvider>
      );
 }
  

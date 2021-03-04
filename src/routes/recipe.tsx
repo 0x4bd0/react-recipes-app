@@ -33,32 +33,39 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+interface ParamBody {
+    id : string 
+}
 
 const Recipe: React.FC<RecipeProps> = () => {
     const classes = useStyles();
     
-    const recipesContext : RecipeContextType = useContext(RecipeContext)
-    const { recipe, recipeDispatcher } = recipesContext
-    const params = useParams()
+    const params  : ParamBody = useParams()
 
-    const {id} = {id:1}
+const recipeReducer : RecipeContextType = useContext(RecipeContext)
+
+    const {
+        recipe,
+        recipeDispatcher
+    } = recipeReducer
 
     useEffect(() => {
 
         let tmp = {
             type: RecipeActionKind.fetch,
-            payload: id
+            payload:  parseInt(params.id)
         }
-        console.log(recipe)
-  //  recipeDispatcher(tmp)
+
+       console.log(recipeReducer)
+    recipeDispatcher(tmp)
     },[])
     
 
     return (
         
             recipe ? <Box className={classes.root}>
-            <img className={classes.image} src="http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/27/20/8/picVfzLZo.jpg"></img>
-            <h1>Tittle of the recipe</h1>
+            <img className={classes.image} src={recipe.imageURL} alt={recipe.name}></img>
+            <h1>{recipe.name}</h1>
             <h3>Ingredients</h3>
             <ol>
                 <li className={classes.li}>do dis</li>
