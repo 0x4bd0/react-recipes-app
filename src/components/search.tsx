@@ -2,6 +2,7 @@ import { Box, Container, Input } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { Label } from "@material-ui/icons";
 import { useContext, useReducer, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { RecipeContext } from "../contexts/recipes";
 import { RecipeContextType } from "../types/types";
 
@@ -32,7 +33,7 @@ const Search: React.FC<SearchProps> = () => {
       dispatch
     } = recipeReducer
 
-
+  const location = useLocation(); 
 
     return ( 
         <Container className={classes.root}>
